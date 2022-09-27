@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <section>
+  <label>
+    <p>Escreve algo aqui e carrega "Enter":</p>
+  </label>
+  <input id="srcCode">
+</section>
+<section>
+  <p id="enviado"></p>
+</section>
+<script>
+    var input = document.getElementById('srcCode');
+    var enviado = document.querySelector('#enviado');
+    input.addEventListener('keydown', function(e) {
+    if (e.keyCode == 13) {
+        e.preventDefault();
+        return enviar(this.value);
+    }
+    });
+
+    function enviar(texto) {
+    enviado.innerHTML = 'Enviado: ' + texto;
+    }
+</script>
+</body>
+</html>
